@@ -1,4 +1,335 @@
-<html>
-  <head></head>
-  <body><h1>Rubiks.help</h1></body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rubik's Cube Learning Hub</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f4f7f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            color: #e67e22;
+            outline: none;
+        }
+
+        .hero {
+            background: url('https://media.istockphoto.com/id/458427175/photo/hands-playing-a-cube-game.jpg?s=612x612&w=0&k=20&c=egpNUHYjZ7qo5ohuHCZFWx-jfsV2DYsObxY0hDKV4lE=') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .btn-primary {
+            background-color: #e67e22;
+            color: white;
+            padding: 0.8rem 1.6rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 3px 6px rgba(230,126,34,0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #cf711f;
+            outline: none;
+            box-shadow: 0 5px 10px rgba(207,113,31,0.7);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Tutorials Section */
+        #tutorials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .tutorial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tutorial-card:hover,
+        .tutorial-card:focus-within {
+            box-shadow: 0 6px 14px rgba(230,126,34,0.3);
+            transform: translateY(-5px);
+            outline: none;
+        }
+
+        .tutorial-card h3 {
+            margin-bottom: 0.8rem;
+            color: #e67e22;
+        }
+
+        .tutorial-card p {
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        .tutorial-card a {
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+
+        /* Tips Section */
+        #tips ul {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: disc inside;
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Resources Section */
+        #resources ul {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #resources li {
+            margin-bottom: 1rem;
+        }
+
+        #resources a {
+            font-weight: 600;
+            color: #e67e22;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #resources a:hover,
+        #resources a:focus {
+            color: #cf711f;
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: #cf711f;
+            outline: none;
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li {
+                margin-left: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Primary Navigation">
+            <h1>Rubik's Cube Learning Hub</h1>
+            <ul>
+                <li><a href="#about" tabindex="0">About</a></li>
+                <li><a href="#tutorials" tabindex="0">Tutorials</a></li>
+                <li><a href="#tips" tabindex="0">Tips & Tricks</a></li>
+                <li><a href="#resources" tabindex="0">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" role="banner" aria-label="Welcome section">
+        <h2>Master the Rubik's Cube Step by Step</h2>
+        <p>Learn how to solve the world’s most popular puzzle with easy-to-follow guides, tips, and resources.</p>
+        <a href="#tutorials" class="btn-primary" tabindex="0">Get Started Now</a>
+    </section>
+
+    <main>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">What is a Rubik’s Cube?</h2>
+            <p>
+                Invented by Ernő Rubik in 1974, the Rubik’s Cube is a 3D combination puzzle.
+                It consists of 6 faces, each covered by nine colored stickers, and the goal is to align all faces so that each face is just one solid color.
+                This puzzle challenges your problem-solving skills and spatial reasoning.
+            </p>
+        </section>
+
+        <section id="tutorials" aria-labelledby="tutorials-heading">
+            <h2 id="tutorials-heading" class="section-title">Tutorials</h2>
+            <article class="tutorial-card" tabindex="0" aria-label="Beginner’s method tutorial">
+                <h3>Beginner's Method</h3>
+                <p>Learn the foundational steps to solving the cube layer by layer from scratch.</p>
+                <a href="https://rubiks.com/en-us/how-to-solve-rubiks-cube" target="_blank" rel="noopener">Learn More &raquo;</a>
+            </article>
+
+            <article class="tutorial-card" tabindex="0" aria-label="CFOP method tutorial">
+                <h3>CFOP Method</h3>
+                <p>Discover the advanced CFOP (Cross, F2L, OLL, PLL) technique used by speedcubers.</p>
+                <a href="https://www.speedsolving.com/wiki/index.php/CFOP" target="_blank" rel="noopener">Learn More &raquo;</a>
+            </article>
+
+            <article class="tutorial-card" tabindex="0" aria-label="Roux method tutorial">
+                <h3>Roux Method</h3>
+                <p>Explore the Roux method which emphasizes block building and fewer moves.</p>
+                <a href="https://www.speedsolving.com/wiki/index.php/Roux_Method" target="_blank" rel="noopener">Learn More &raquo;</a>
+            </article>
+        </section>
+
+        <section id="tips" aria-labelledby="tips-heading">
+            <h2 id="tips-heading" class="section-title">Tips & Tricks</h2>
+            <ul>
+                <li>Practice finger tricks to increase your speed and efficiency.</li>
+                <li>Learn and memorize algorithms by grouping them logically.</li>
+                <li>Break down your practice sessions into short, consistent daily practices.</li>
+                <li>Use high-quality lubrication to improve cube turning smoothness.</li>
+                <li>Record your solves to analyze and improve your techniques.</li>
+            </ul>
+        </section>
+
+        <section id="resources" aria-labelledby="resources-heading">
+            <h2 id="resources-heading" class="section-title">Useful Resources</h2>
+            <ul>
+                <li>
+                    <a href="https://www.speedsolving.com/" target="_blank" rel="noopener" tabindex="0">SpeedSolving.com</a> - Active forums and tutorials.
+                </li>
+                <li>
+                    <a href="https://rubiks.com/" target="_blank" rel="noopener" tabindex="0">Official Rubik's Cube Website</a> - Official guides and latest products.
+                </li>
+                <li>
+                    <a href="https://www.cubeskills.com/" target="_blank" rel="noopener" tabindex="0">CubeSkills</a> - Video tutorials by World Champion Feliks Zemdegs.
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@JPerm" target="_blank" rel="noopener" tabindex="0">J Perm (YouTube)</a> - Comprehensive video tutorials and tips.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Rubik’s Cube Learning Hub &nbsp;|&nbsp; <a href="mailto:contact@rubikslearninghub.com">Contact Us</a></p>
+        <p>
+            Follow us on
+            <a href="https://twitter.com/rubikslearning" target="_blank" rel="noopener" tabindex="0">Twitter</a> |
+            <a href="https://www.facebook.com/rubikslearning" target="_blank" rel="noopener" tabindex="0">Facebook</a>
+        </p>
+    </footer>
+</body>
 </html>
