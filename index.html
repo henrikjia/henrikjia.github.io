@@ -5,69 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rubik's Cube Learning Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/bleeding-cowboys" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav aria-label="Primary Navigation">
             <h1>The Cube Hub</h1>
             <ul>
-                <li><a href="#about" tabindex="0">About</a></li>
-                <li><a href="#tutorials" tabindex="0">Tutorials</a></li>
-                <li><a href="#tips" tabindex="0">Tips & Tricks</a></li>
-                <li><a href="#resources" tabindex="0">Resources</a></li>
+                <li><a href="#about-heading" tabindex="0">About</a></li>
+                <li><a href="#tutorials-heading" tabindex="0">Tutorials</a></li>
+                <li><a href="#tips-heading" tabindex="0">Tips & Tricks</a></li>
+                <li><a href="#resources-heading" tabindex="0">Resources</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero" role="banner" aria-label="Welcome section">
         <h2>Master the Rubik's Cube Step by Step</h2>
-        <p>Learn how to solve the world’s most popular puzzle with easy-to-follow guides, tips, and resources.</p>
-        <a href="#tutorials" class="btn-primary" tabindex="0">Get Started Now</a>
+        <p>Learn how to solve the world's most popular puzzle with easy-to-follow guides, tips, and resources.</p>
+        <a href="#tutorials-heading" class="btn-primary" tabindex="0">Get Started Now</a>
     </section>
 
     <main>
+        <h2 id="about-heading" class="section-title">What is a Rubik's Cube?</h2>
         <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading" class="section-title">What is a Rubik’s Cube?</h2>
             <p>
-                Invented by Ernő Rubik in 1974, the Rubik’s Cube is a 3D combination puzzle.
+                Invented by Ernő Rubik in 1974, the Rubik's Cube is a 3D combination puzzle.
                 It consists of 6 faces, each covered by nine colored stickers, and the goal is to align all faces so that each face is just one solid color.
                 This puzzle challenges your problem-solving skills and spatial reasoning.
             </p>
         </section>
 
+        <h2 id="about-heading" class="section-title">What is Rubiks.help</h2>
         <section id="What is Rubiks.help" aria-labelledby="WhatisRubiks.help-heading">
-            <h2 id="about-heading" class="section-title">What is Rubiks.help</h2>
-            <p>Struggling to solve the Rubik’s Cube? You’re not alone — and you’ve just found the perfect place to learn!
- 
-At rubiks.help, we make solving the cube simple and fun. Our clear guides, animations, and beginner-friendly lessons break down every step — from understanding the cube’s structure to mastering the final layer.
- </p>
- 
- <p>                                                                  </p>
- <br>
-<p>No confusing math or long algorithms — just practical, easy-to-follow instructions that anyone can use to go from scrambled to solved.</p>
- <br>
-<p>Start your journey today and see how satisfying it is to complete your first solve!
-Get Started Now on rubiks.help</p>
+            <p>Struggling to solve the Rubik's Cube? You're not alone — and you've just found the perfect place to learn!
+At rubiks.help, we make solving the cube simple and fun. Our clear guides, animations, and beginner-friendly lessons break down every step — from understanding the cube's structure to mastering the final layer.
+            </p>
+            
+            <p>                                                                  </p>
+            <br>
+            <p>No confusing math or long algorithms — just practical, easy-to-follow instructions that anyone can use to go from scrambled to solved.</p>
+            <br>
+            <p>Start your journey today and see how satisfying it is to complete your first solve!
+            Get Started Now on rubiks.help</p>
 
-                
+                            
  
  
                 
-        
+        <h2 id="tutorials-heading" class="section-title">Tutorials</h2>
         <section id="tutorials" aria-labelledby="tutorials-heading">
-    <h2 id="tutorials-heading" class="section-title">Tutorials</h2>
+            <!-- Beginner's Method Card (Now redirects to beginners.html) -->
+            <article class="tutorial-card" tabindex="0" aria-label="Beginner's method tutorial" onclick="window.location.href='beginners.html'" style="cursor:pointer;">
+                <h3>Beginner's Method</h3>
+                <p>Learn the foundational steps to solving the cube layer by layer from scratch.</p>
+                <a href="beginners.html">Learn More &raquo;</a>
+            </article>
 
-    <!-- Beginner's Method Card (Now redirects to beginners.html) -->
-    <article class="tutorial-card" tabindex="0" aria-label="Beginner’s method tutorial" onclick="window.location.href='beginners.html'" style="cursor:pointer;">
-        <h3>Beginner's Method</h3>
-        <p>Learn the foundational steps to solving the cube layer by layer from scratch.</p>
-        <a href="beginners.html">Learn More &raquo;</a>
-    </article>
+            <article class="tutorial-card" tabindex="0" aria-label="Intermediate's method tutorial" onclick="window.location.href='beginners.html'" style="cursor:pointer;">
+                <h3>Intermediate's Method</h3>
+                <p>Learn to master techniques which will allow you to accelerate your process of sovling the Rubik's cube.</p>
+                <a href="intermediate.html">Learn More &raquo;</a>
+            </article>
 
-</section>
+        </section>  
 
+        <h2 id="tips-heading" class="section-title">Tips & Tricks</h2>
         <section id="tips" aria-labelledby="tips-heading">
-            <h2 id="tips-heading" class="section-title">Tips & Tricks</h2>
             <ul>
                 <li>Practice finger tricks to increase your speed and efficiency.</li>
                 <li>Learn and memorize algorithms by grouping them logically.</li>
@@ -77,8 +81,8 @@ Get Started Now on rubiks.help</p>
             </ul>
         </section>
 
+        <h2 id="resources-heading" class="section-title">Useful Resources</h2>
         <section id="resources" aria-labelledby="resources-heading">
-            <h2 id="resources-heading" class="section-title">Useful Resources</h2>
             <ul>
                 <li>
                     <a href="https://www.speedsolving.com/" target="_blank" rel="noopener" tabindex="0">SpeedSolving.com</a> - Active forums and tutorials.
